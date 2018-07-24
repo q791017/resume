@@ -1,0 +1,219 @@
+// defult option //
+
+// color //
+$gray-h: #434343
+$gray-l: #666
+
+
+// font-size //
+$s1: 34px
+$s2: 24px
+$s3: 20px
+$s4: 16px
+$s5: 13px
+$s6: 12px
+
+// col //
+$col-1: 960px
+$col-2: 440px
+$col-min: 288px
+
+// rwd layout //
+$pc-media-l: 1740px
+$pc-media: 1440px
+$note-media: 1240px
+$mobile-media: 800px
+$mobile-media-s: 480px
+@mixin desktop
+  max-width: $col-1
+@mixin note
+  width: 50%
+@mixin mobile
+  max-width: $col-min
+
+// col-default //
+.main, .main-intro
+  margin: 0 auto
+  transition: all .3s ease
+  +desktop
+.col-1
+  +desktop
+.col-2
+  +note
+
+// col-rwd //
+@mixin media($width)
+  @media only screen and (max-width: $width)
+    @content
+@include media($pc-media-l)
+
+@include media($pc-media)
+
+@include media($note-media)
+
+@include media($mobile-media)
+
+@include media($mobile-media-s)
+
+@mixin lrcenter
+  margin: 0 auto
+
+// all //
+*
+	position: relative
+  line-height: auto
+  height: auto
+body
+	font-family: 'Arial', '微軟正黑體'
+
+// custom-seting //
+a
+  text-decoration: none
+img
+  height: auto
+  display: block
+h1, h2, h3, h4, p, a, span, ul, li
+  margin: 0px
+  padding: 0px
+  font-size: $s5
+  color: $gray-l
+  line-height: auto
+  list-style-type: none
+
+// custom //
+.container
+  width: 100%
+  margin: 0 auto
+  overflow: hidden
+  background-image: url('../images/bg.jpg')
+  background-size: cover
+  background-position: center
+.container-wrap
+  max-width: 960px
+  padding-bottom: 30vh
+  padding-top: 10vh
+  padding-left: 20px
+  padding-right: 20px
+  +lrcenter
+.resume-wrap
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  margin-bottom: 10vh
+.resume-img
+  max-width: 300px
+  margin: 0px 20px
+  img
+    width: 100%
+    opacity: .6
+.resume-content-wrap
+  margin-left: 40px
+  a
+    display: block
+    display: flex
+    justify-content: flex-start
+    align-items: center
+.resume-text-wrap
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  img
+    width: 24px
+    margin-right: 20px
+.resume-content
+  max-width: 100%
+  margin: 0px 20px
+.summary-content
+  margin-left: 40px
+.exp-time-line-wrap, .edu-time-line-wrap, .awards-time-line-wrap, .cer-time-line-wrap, .skill-time-line-wrap
+  display: flex
+  justify-content: flex-start
+  align-items: top
+  margin-left: 20px
+.exp-content-wrap, .edu-content-wrap, .awards-content-wrap, .cer-content-wrap, .skill-content-wrap
+  width: 100%
+  border-left: 1px solid $gray-h
+  padding-left: 19px
+  padding-bottom: 20px
+.content-text-en-wrap
+  display: flex
+  justify-content: flex-start
+  align-items: top
+.content-text-en
+  width: calc(100% - 13px)
+.content-text-dot
+  width: 13px
+  height: 13px
+  background-color: #fff
+  margin-left: -26px
+  border-radius: 13px
+  margin-right: 19px
+  display: flex
+  justify-content: center
+  align-items: center
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5)
+.dot-core
+  width: 5px
+  height: 5px
+  border-radius: 5px
+  background-color: $gray-h
+.col-wrap
+  display: flex
+  justify-content: space-between
+  align-items: top
+  flex-wrap: wrap
+.skill-text-wrap
+  display: flex
+  justify-content: flex-start
+  align-items: center
+.skill-content-title
+  min-width: 70px
+
+.langu-wrap
+  text-align: right
+  right: 0px
+  display: flex
+  justify-content: flex-end
+  align-items: center
+.langu-btn-wrap
+  a
+    display: block
+  p
+    font-size: 15px
+    font-weight: bold
+    margin: 0px 4px
+    &:hover
+      color: #1e90ff
+
+
+@include media($pc-media-l)
+
+@include media($pc-media)
+
+@include media($note-media)
+
+@include media(628px)
+  .col-2
+    width: 100%
+  .resume-content-wrap
+    margin-left: 0px
+  .resume-text-wrap
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    flex-wrap: wrap
+    margin: 12px 0px
+    a
+      width: 100%
+      display: block
+  .resume-text
+    width: 100%
+    text-align: center
+  .resume-icon
+    width: 100%
+    text-align: center
+    img
+      +lrcenter
+@include media($mobile-media-s)
